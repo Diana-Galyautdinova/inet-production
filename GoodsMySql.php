@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * В базе данных имеется таблица с товарами goods (id INTEGER, name TEXT), таблица с тегами tags (id INTEGER, name TEXT)
+ * и таблица связи товаров и тегов goods_tags (tag_id INTEGER, goods_id INTEGER, UNIQUE(tag_id, goods_id)).
+ * Выведите id и названия всех товаров, которые имеют все возможные теги в этой базе.
+ */
+
 require __DIR__ . '/index.php';
 setEnv();
 

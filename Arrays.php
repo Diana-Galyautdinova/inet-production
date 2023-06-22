@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * выделить уникальные записи (убрать дубли) в отдельный массив. в конечном массиве не должно быть
+ * элементов с одинаковым id.
+ */
+
 function getUniqueById(array $array): array
 {
     $ids = array_column($array, 'id');
@@ -11,6 +16,10 @@ function getUniqueById(array $array): array
     }, $uniqueKeys);
 }
 
+/*
+ * отсортировать многомерный массив по ключу (любому)
+ */
+
 function sortById(array $array): array
 {
     usort($array, function ($a, $b) {
@@ -19,6 +28,10 @@ function sortById(array $array): array
 
     return $array;
 }
+
+/*
+ * вернуть из массива только элементы, удовлетворяющие внешним условиям (например элементы с определенным id)
+ */
 
 function getFreshArray(array $array): array
 {
@@ -32,6 +45,10 @@ function getFreshArray(array $array): array
 
     return array_intersect_key($array, array_flip($res));
 }
+
+/*
+ * изменить в массиве значения и ключи (использовать name => id в качестве пары ключ => значение)
+ */
 
 function convertArray(array $array): array
 {

@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * Выбрать без join-ов и подзапросов все департаменты, в которых есть мужчины, и все они (каждый)
+ * поставили высокую оценку (строго выше 5).
+ */
+
 require __DIR__ . '/index.php';
 setEnv();
 
@@ -60,7 +65,7 @@ function findEvaluations(): void
 {
     createDataEvaluations();
     $sql = "SELECT department_id from evaluations
-                where gender = true and value>5 group by department_id";
+                where gender = true and value > 5 group by department_id";
     makeQuery($sql);
     var_dump($sql);
 }
